@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TennisPlayer } from './tennis-player'
 
 @Component({
   selector: 'app-root',
@@ -14,16 +15,8 @@ import { Component } from '@angular/core';
         </li>
       </ul>
 
-      <div *ngIf="selectedPlayer">
-        <h2>Details of {{selectedPlayer.lastName}}</h2>
-        <div><label>ID:</label>{{selectedPlayer.id}}</div>
-        <div>
-          <label>Name:</label>
-          <input [(ngModel)]="selectedPlayer.firstName" placeholder="first name" >
-          <input [(ngModel)]="selectedPlayer.lastName" placeholder="last name" >
-        </div>
-        <div><label>Ranking:</label>{{selectedPlayer.currentRanking}}</div>
-      </div>
+      <!-- [player] is an INPUT property and requires importing Input artifact in the detail component -->
+      <player-detail [player]="selectedPlayer" ></player-detail>
       `
 })
 
@@ -50,10 +43,3 @@ const TENNIS_PLAYERS : TennisPlayer[] = [
   { id: 9,  firstName: "Kei",      lastName: "Nishikori", currentRanking: 9 },
   { id: 10, firstName: "Jo-Wilfried", lastName: "Tsonga", currentRanking: 10 }
 ];
-
-export class TennisPlayer {
-  id : number;
-  firstName : string;
-  lastName : string;
-  currentRanking: number;
-}
