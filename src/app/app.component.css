@@ -1,0 +1,12 @@
+h1 {
+    color: blue
+}
+
+.players {
+    list-style-type: none;
+    width: 15em;
+}
+
+.selected-player {
+    background-color: lightgray;
+}
