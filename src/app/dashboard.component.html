@@ -1,0 +1,8 @@
+<h3>Top 5</h3>
+<div class="card-columns">
+    <a *ngFor='let p of players' [routerLink]="['/playerdetail', p.id]"  class="card" >
+        <p><strong>{{p.lastName}}</strong></p>
+        <label>Ranking:</label><span>{{p.currentRanking}}</span>
+    </a>
+</div>
+

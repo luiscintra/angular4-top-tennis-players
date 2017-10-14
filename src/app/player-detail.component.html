@@ -1,0 +1,11 @@
+<div *ngIf="player">
+    <h2>Details of {{player.lastName}}</h2>
+    <div><label>ID:</label>{{player.id}}</div>
+    <div>
+        <label>Name:</label>
+        <input [(ngModel)]="player.firstName" placeholder="first name">
+        <input [(ngModel)]="player.lastName" placeholder="last name">
+    </div>
+    <div><label>Ranking:</label>{{player.currentRanking}}</div>
+    <button (click)="goBack()">Back</button>
+</div>
